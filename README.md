@@ -306,4 +306,14 @@ else {
 
 ## UndirectedGraph
 
-Need to add this documentation. 
+### UndirectedGraph.prototype.numNodes = function ()
+
+Returns the number of nodes contained in the graph.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync('./graph.json'));
+var t_graph = new UndirectedGraph(g);
+
+console.log(t_graph.numNodes()); // #==> prints '3' for the test graph
+```
