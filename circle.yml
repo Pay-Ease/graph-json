@@ -1,0 +1,18 @@
+machine:
+  environment:
+    PATH: "${HOME}/.asdf/bin:${HOME}/.asdf/shims:${PATH}"
+    MIX_ENV: "test"
+  node:
+    version:
+      7.5.0
+
+dependencies:
+  cache_directories:
+    - ~/.asdf
+  pre:
+    - ./scripts/circleci-setup.sh
+    - npm install
+
+test:
+  override:
+    - npm test
