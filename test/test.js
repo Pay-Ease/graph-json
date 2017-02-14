@@ -93,6 +93,18 @@ describe('Directed Graph Creation', function () {
         assert(!t_graph.isTerminal('A'));
     });
 
+    it('Can determine number of nodes for a null directed graph', function () {
+      var nullDirectedGraph = new DG();
+      assert(nullDirectedGraph.numNodes() === 0);
+    });
+
+    it('Can determine number of nodes for a non-null directed graph', function () {
+      var nonNullDirectedGraph = new DG();
+      nonNullDirectedGraph.addNode('1');
+      nonNullDirectedGraph.addNode('2');
+      assert(nonNullDirectedGraph.numNodes() === 2);
+    });
+
     it('Tests DFS', function () {
         assert(t_graph.dfs('B', 'A', t_graph) === t_graph.getNode('B'));
         assert(t_graph.dfs('dne', 'A', t_graph) === null);
@@ -137,6 +149,18 @@ describe('Undirected Graph Creation', function () {
     
     it('Can add a sequence of nodes ', function() {
         t_graph.add('F', 'G', 'H', 'I', 'J');
+    });
+
+    it('Can determine number of nodes for a null undirected graph', function () {
+      var nullDirectedGraph = new UG();
+      assert(nullDirectedGraph.numNodes() === 0);
+    });
+
+    it('Can determine number of nodes for a non-null undirected graph', function () {
+      var nonNullDirectedGraph = new UG();
+      nonNullDirectedGraph.addNode('1');
+      nonNullDirectedGraph.addNode('2');
+      assert(nonNullDirectedGraph.numNodes() === 2);
     });
     
     it('Prints the structure of a graph after addition of nodes and edges', function() {
